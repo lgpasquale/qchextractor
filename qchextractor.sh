@@ -6,7 +6,7 @@ case $i in
     -h|--help)
         echo "Extract the html documentation contained in a *.qch"
         echo "Usage:"
-        echo "    qchextractor <input-qch-file> <output-directory>"
+        echo "    qchextractor.sh <input-qch-file> <output-directory>"
         echo "Options:"
         echo "  -h, --help                  print this help"
         exit 0
