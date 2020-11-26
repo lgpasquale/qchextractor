@@ -4,7 +4,7 @@ for i in "$@"
 do
 case $i in
     -h|--help)
-        echo "Extract the html documentation contained in a *.qch"
+        echo "Extract HTML documentation contained in .qch file"
         echo "Usage:"
         echo "    qchextractor.sh <input-qch-file> <output-directory>"
         echo "Options:"
@@ -19,15 +19,15 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 if [ ! -f $1 ]; then
-    echo "invalid input file: $1"
+    echo "Invalid input file: $1"
     exit 1
 fi
 
 output_dir="$2/html"
-mkdir -p ${output_dir} || { echo "unable to create output dir $2"; exit 1; }
+mkdir -p ${output_dir} || { echo "Unable to create output dir $2"; exit 1; }
 
 numfiles=$(sqlite3 "$1" "SELECT Count(*) FROM FileNameTable;")
-echo "numero file: ${numfiles}"
+echo "File number: ${numfiles}"
 
 maxrow=$(( ${numfiles} - 1 ))
 echo -n -e "Extracting files:"
